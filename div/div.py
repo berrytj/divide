@@ -14,3 +14,36 @@ def divide(num, den):
 	outer = sign * abs(num)
 
 	find(num, den, inner, outer)
+
+
+def find(num, den, inner, outer):
+	''' '''
+
+	#mid = divide(inner + outer, 2)
+	mid = (inner + outer) // 2
+	estimate = mid * den
+	remainder = estimate - num
+
+	if remainder == 0:
+		return mid, remainder
+	elif cmp(remainder, 0) == cmp(den, 0):
+		if 0 < abs(remainder) < abs(den):
+			return mid, remainder
+		else:
+			narrow range if quotient should be positive
+			outer range if quotient should be negative
+	else:
+		outer range if quotient should be positive
+		narrow range if quotient should be negative
+
+
+
+
+
+
+
+
+
+
+
+
