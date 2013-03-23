@@ -1,11 +1,11 @@
 
 from nose import *
-from div.div import divide
+from div import divide
 
 def test_divide():
 
-	for num in range(-10, 10):
-		for den in range(-10, 10):
+	for num in range(0, 10):
+		for den in range(0, 10):
 			exp_quotient = num // den
 			exp_remainder = num % den
 			quotient, remainder = divide(num, den)

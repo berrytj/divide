@@ -30,12 +30,13 @@ def find(num, den, inner, outer):
 		if 0 < abs(remainder) < abs(den):
 			return mid, remainder
 		else:
-			narrow range if quotient should be positive
-			outer range if quotient should be negative
+			outer = mid - 1  #narrow range if quotient should be positive
+			#outer range if quotient should be negative
 	else:
-		outer range if quotient should be positive
-		narrow range if quotient should be negative
+		inner = mid + 1  #outer range if quotient should be positive
+		#narrow range if quotient should be negative
 
+	find(num, den, inner, outer)
 
 
 
