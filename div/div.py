@@ -3,7 +3,7 @@ def divide(num, den):
 	''' '''
 
 	if den == 0:
-		return 'Error'
+		return 'Error', 'Error'
 	elif num == 0:
 		return 0, 0
 	elif den == 1:
