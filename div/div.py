@@ -18,11 +18,12 @@ def divide(num, den):
 
 def find(num, den, inner, outer, sign):
 	''' '''
-	print 'inner = ' + str(inner) + ', outer = ' + str(outer)
+	#print 'inner = ' + str(inner) + ', outer = ' + str(outer)
 	#mid = divide(inner + outer, 2)
 	mid = (inner + outer) // 2
 	print 'mid = ' + str(mid)
 	estimate = mid * den
+	print 'estimate: ' + str(estimate)
 	remainder = num - estimate
 
 	if remainder == 0:
@@ -31,13 +32,15 @@ def find(num, den, inner, outer, sign):
 		if 0 < abs(remainder) < abs(den):
 			return mid, remainder
 		else:
-			#outer = mid
-			inner = mid + 1  #outer range if quotient should be positive
-			#narrow range if quotient should be negative
+			if sign == 1:
+				inner = mid + 1  #outer range if quotient should be positive
+			else:
+				outer = mid + 1  #narrow range if quotient should be negative
 	else:
-		#inner = mid
-		outer = mid - 1  #narrow range if quotient should be positive
-		#outer range if quotient should be negative
+		if sign == 1:
+			outer = mid - 1  #narrow range if quotient should be positive
+		else:
+			inner = mid - 1  #outer range if quotient should be negative
 		
 
 	return find(num, den, inner, outer, sign)
