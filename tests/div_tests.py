@@ -8,7 +8,9 @@ def test_divide():
 	the results of performing native calculations.'''
 
 	# Test a wide range of both positive and negative integers.
-	ints = range(-1050, -950) + range(-100, 100) + range(950, 1050)
+	ints = range(-10010, -9990) + range(-1050, -950) + \
+		   range(-100, 100) + range(950, 1050) + \
+		   range(9990, 10010)
 
 	for num in ints:
 		for den in ints:
