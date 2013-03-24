@@ -10,19 +10,20 @@ def divide(num, den):
 		return num, 0
 
 	sign = cmp(num * den, 0)
-	inner = sign
+	inner = 0
 	outer = sign * abs(num)
 
-	find(num, den, inner, outer)
+	return find(num, den, inner, outer, sign)
 
 
-def find(num, den, inner, outer):
+def find(num, den, inner, outer, sign):
 	''' '''
-
+	print 'inner = ' + str(inner) + ', outer = ' + str(outer)
 	#mid = divide(inner + outer, 2)
 	mid = (inner + outer) // 2
+	print 'mid = ' + str(mid)
 	estimate = mid * den
-	remainder = estimate - num
+	remainder = num - estimate
 
 	if remainder == 0:
 		return mid, remainder
@@ -30,13 +31,16 @@ def find(num, den, inner, outer):
 		if 0 < abs(remainder) < abs(den):
 			return mid, remainder
 		else:
-			outer = mid - 1  #narrow range if quotient should be positive
-			#outer range if quotient should be negative
+			#outer = mid
+			inner = mid + 1  #outer range if quotient should be positive
+			#narrow range if quotient should be negative
 	else:
-		inner = mid + 1  #outer range if quotient should be positive
-		#narrow range if quotient should be negative
+		#inner = mid
+		outer = mid - 1  #narrow range if quotient should be positive
+		#outer range if quotient should be negative
+		
 
-	find(num, den, inner, outer)
+	return find(num, den, inner, outer, sign)
 
 
 
