@@ -39,16 +39,20 @@ def find_quotient(num, den, inner, outer, sign):
 
 		else:  # If remainder is `absolutely` larger than the denominator:
 			if sign == 1:
+				# If quotient is positive:
 				inner = mid + 1  # Search outer range.
 			else:
+				# If quotient is negative:
 				outer = mid + 1  # Search inner range.
 
 	else:  # If remainder has a different sign than the denominator:
 
 		if sign == 1:
-			outer = mid - 1  # Search outer range.
+			# If quotient is positive:
+			outer = mid - 1  # Search inner range.
 		else:
-			inner = mid - 1  # Search inner range.
+			# If quotient is negative:
+			inner = mid - 1  # Search outer range.
 	
 	return find_quotient(num, den, inner, outer, sign)
 

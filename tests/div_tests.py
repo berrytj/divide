@@ -27,4 +27,3 @@ def test_divide():
 			assert_equal(exp_quotient, quotient)
 			assert_equal(exp_remainder, remainder)
 			
-
