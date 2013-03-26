@@ -25,7 +25,7 @@ def find_quotient(num, den, inner, outer, sign):
 	zero and the denominator.  In all other cases, repeat
 	binary search on the appropriate half of the range.'''
 
-	mid = (inner + outer) // 2  # Bisect the range being searched.
+	mid = (inner + outer) >> 1  # Bisect the range being searched.
 	remainder = num - mid * den
 
 	if remainder == 0:
